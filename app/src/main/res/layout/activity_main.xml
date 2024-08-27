@@ -4,172 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="activity"
-            type="com.example.kotlinfirstweekproject.MainActivity" />
+
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <Switch
-            android:id="@+id/swt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitchClicked(swt1)}"
-            android:enabled="@{activity.isSwitchEnabled}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
 
-        <TextView
-            android:id="@+id/tw1"
-            android:layout_width="wrap_content"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Happiness"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt1"
-            app:layout_constraintStart_toStartOf="@id/swt1"
-            app:layout_constraintEnd_toEndOf="@id/swt1" />
+            android:layout_gravity="bottom"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
 
-        <Switch
-            android:id="@+id/swt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitchClicked(swt2)}"
-            android:enabled="@{activity.isSwitchEnabled}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/tw2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Optimizm"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt2"
-            app:layout_constraintStart_toStartOf="@id/swt2"
-            app:layout_constraintEnd_toEndOf="@id/swt2" />
-
-        <Switch
-            android:id="@+id/swt3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitchClicked(swt3)}"
-            android:enabled="@{activity.isSwitchEnabled}"
-            app:layout_constraintTop_toBottomOf="@id/tw1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintVertical_bias="0.4"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/tw3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kindness"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt3"
-            app:layout_constraintStart_toStartOf="@id/swt3"
-            app:layout_constraintEnd_toEndOf="@id/swt3" />
-
-        <Switch
-            android:id="@+id/swt4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitchClicked(swt4)}"
-            android:enabled="@{activity.isSwitchEnabled}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.4"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/tw4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Giving"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt4"
-            app:layout_constraintStart_toStartOf="@id/swt4"
-            app:layout_constraintEnd_toEndOf="@id/swt4" />
-
-        <Switch
-            android:id="@+id/swt5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitchClicked(swt5)}"
-            android:enabled="@{activity.isSwitchEnabled}"
-            app:layout_constraintTop_toBottomOf="@id/tw3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintVertical_bias="0.6"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/tw5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Respect"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt5"
-            app:layout_constraintStart_toStartOf="@id/swt5"
-            app:layout_constraintEnd_toEndOf="@id/swt5" />
-
-        <Switch
-            android:id="@+id/swt6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumb="@drawable/thumb"
-            android:track="@drawable/track"
-            android:onClick="@{() -> activity.onSwitch6Clicked()}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintVertical_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        <TextView
-            android:id="@+id/tw6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ego"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@id/swt6"
-            app:layout_constraintStart_toStartOf="@id/swt6"
-            app:layout_constraintEnd_toEndOf="@id/swt6" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

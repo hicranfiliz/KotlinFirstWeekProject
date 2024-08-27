@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.kotlinfirstweekproject.HomeFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeFragment">
+
+        <Switch
+            android:id="@+id/swt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitchClicked(swt1)}"
+            android:enabled="@{fragment.isSwitchEnabled}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/happiness"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt1"
+            app:layout_constraintStart_toStartOf="@id/swt1"
+            app:layout_constraintEnd_toEndOf="@id/swt1" />
+
+        <Switch
+            android:id="@+id/swt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitchClicked(swt2)}"
+            android:enabled="@{fragment.isSwitchEnabled}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optimizm"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt2"
+            app:layout_constraintStart_toStartOf="@id/swt2"
+            app:layout_constraintEnd_toEndOf="@id/swt2" />
+
+        <Switch
+            android:id="@+id/swt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitchClicked(swt3)}"
+            android:enabled="@{fragment.isSwitchEnabled}"
+            app:layout_constraintTop_toBottomOf="@id/tw1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintVertical_bias="0.4"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kindness"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt3"
+            app:layout_constraintStart_toStartOf="@id/swt3"
+            app:layout_constraintEnd_toEndOf="@id/swt3" />
+
+        <Switch
+            android:id="@+id/swt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitchClicked(swt4)}"
+            android:enabled="@{fragment.isSwitchEnabled}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giving"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt4"
+            app:layout_constraintStart_toStartOf="@id/swt4"
+            app:layout_constraintEnd_toEndOf="@id/swt4" />
+
+        <Switch
+            android:id="@+id/swt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitchClicked(swt5)}"
+            android:enabled="@{fragment.isSwitchEnabled}"
+            app:layout_constraintTop_toBottomOf="@id/tw3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintVertical_bias="0.6"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Respect"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt5"
+            app:layout_constraintStart_toStartOf="@id/swt5"
+            app:layout_constraintEnd_toEndOf="@id/swt5" />
+
+        <Switch
+            android:id="@+id/swt6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumb="@drawable/thumb"
+            android:track="@drawable/track"
+            android:onClick="@{() -> fragment.onSwitch6Clicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintVertical_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <TextView
+            android:id="@+id/tw6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ego"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/swt6"
+            app:layout_constraintStart_toStartOf="@id/swt6"
+            app:layout_constraintEnd_toEndOf="@id/swt6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

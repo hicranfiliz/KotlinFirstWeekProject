@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.kotlinfirstweekproject.HomeFragment"
+        android:label="fragment_all_switch"
+        tools:layout="@layout/fragment_all_switch" />
+    <fragment
+        android:id="@+id/swt1Fragment"
+        android:name="com.example.kotlinfirstweekproject.Switch1Fragment"
+        android:label="fragment_switch1"
+        tools:layout="@layout/fragment_switch1" />
+    <fragment
+        android:id="@+id/swt2Fragment"
+        android:name="com.example.kotlinfirstweekproject.Switch2Fragment"
+        android:label="fragment_switch2"
+        tools:layout="@layout/fragment_switch2" />
+    <fragment
+        android:id="@+id/swt3Fragment"
+        android:name="com.example.kotlinfirstweekproject.Switch3Fragment"
+        android:label="fragment_switch3"
+        tools:layout="@layout/fragment_switch3" />
+    <fragment
+        android:id="@+id/swt4Fragment"
+        android:name="com.example.kotlinfirstweekproject.Switch4Fragment"
+        android:label="fragment_switch4"
+        tools:layout="@layout/fragment_switch4" />
+</navigation>

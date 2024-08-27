@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/happy" />
+
+    <item
+        android:id="@+id/swt1Fragment"
+        android:title="Switch 1"
+        android:icon="@drawable/community" />
+
+    <item
+        android:id="@+id/swt2Fragment"
+        android:title="Switch 2"
+        android:icon="@drawable/kindness" />
+
+    <item
+        android:id="@+id/swt3Fragment"
+        android:title="Switch 3"
+        android:icon="@drawable/self_esteem" />
+
+    <item
+        android:id="@+id/swt4Fragment"
+        android:title="Switch 4"
+        android:icon="@drawable/give_love" />
+
+</menu>
