@@ -30,4 +30,9 @@
         android:name="com.example.kotlinfirstweekproject.Switch4Fragment"
         android:label="fragment_switch4"
         tools:layout="@layout/fragment_switch4" />
+    <fragment
+        android:id="@+id/switch5Fragment"
+        android:name="com.example.kotlinfirstweekproject.Switch5Fragment"
+        android:label="fragment_switch5"
+        tools:layout="@layout/fragment_switch5" />
 </navigation>
