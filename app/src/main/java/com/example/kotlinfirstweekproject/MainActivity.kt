@@ -11,6 +11,8 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import androidx.startup.AppInitializer
+import app.rive.runtime.kotlin.RiveInitializer
 import com.example.kotlinfirstweekproject.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -27,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         initViews()
         initEvents()
+
+        AppInitializer.getInstance(applicationContext)
+            .initializeComponent(RiveInitializer::class.java)
 
     }
 

@@ -13,6 +13,6 @@ class Switch3Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_switch3, container, false)
+        return inflater.inflate(R.layout.fragment_kindness, container, false)
     }
 }

@@ -1,21 +1,27 @@
 package com.example.kotlinfirstweekproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Switch
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
+import app.rive.runtime.kotlin.core.Rive
 import com.example.kotlinfirstweekproject.databinding.ActivityMainBinding
 import com.example.kotlinfirstweekproject.databinding.FragmentAllSwitchBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 import java.util.ArrayList
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding: FragmentAllSwitchBinding
+    lateinit var binding: FragmentAllSwitchBinding
     private lateinit var bottomNav : BottomNavigationView
     var isSwitchEnabled : Boolean = false
     private val switchOrder = mutableListOf<Int>()  // acilan switchlerin sirasini tutmak icin liste olusturuldu.
@@ -30,7 +36,7 @@ class HomeFragment : Fragment() {
         // mainactitvity'den bottomnavbar alindi.
         bottomNav = requireActivity().findViewById(R.id.bottomNav)
 
-        // BottomNavigationBar'ı geri yükle
+        // kaydedilen bottom nav state i
         if (savedInstanceState != null) {
             val restoredOrder = savedInstanceState.getIntegerArrayList("bottom_nav_items")
             if (restoredOrder != null) {
@@ -51,15 +57,21 @@ class HomeFragment : Fragment() {
             bottomNav.visibility = View.GONE
         }
 
+//        bottomNav.setOnNavigationItemSelectedListener { item ->
+//            navigateToFragment(item.itemId)
+//            true
+//        }
+
+        Rive.init(requireContext())
         binding.swt6.isChecked = true
         bottomNav.visibility = View.GONE
         disableAllSwitches()
         return binding.root
     }
 
+
     override fun onResume() {
         super.onResume()
-        // HomeFragment geri geldiğinde BottomNavigationBar görünür olsun
         if (!binding.swt6.isChecked) {
             bottomNav.visibility = View.VISIBLE
             enableAllSwitches()
@@ -67,6 +79,7 @@ class HomeFragment : Fragment() {
             disableAllSwitches()
         }
     }
+
 
     fun onSwitchClicked(switch: Switch){
         if (binding.swt6.isChecked){
@@ -138,19 +151,9 @@ class HomeFragment : Fragment() {
                 }
                 bottomNav.menu.add(Menu.NONE, switchId, Menu.NONE, text).setIcon(icon)
             } else {
-                // 5. öğeyi eklemek yerine en son eklenen öğeyi kaldırın
-                val removedId = switchOrder.removeAt(0)
-                bottomNav.menu.removeItem(removedId)
+                Snackbar.make(binding.root, "En fazla 4 item eklenebilir!!!!", Snackbar.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "En fazla 4 item eklenebilir!!", Toast.LENGTH_SHORT).show()
                 switchOrder.add(switchId)
-                val (icon,text) = when (switch.id){
-                    R.id.swt1 -> R.drawable.happy to "Happiness"
-                    R.id.swt2 -> R.drawable.sunny to "Optimizm"
-                    R.id.swt3 -> R.drawable.kindness to "Kindness"
-                    R.id.swt4 -> R.drawable.give_love to "Giving"
-                    R.id.swt5 -> R.drawable.relationship to "Respect"
-                    else -> R.drawable.home to "Home"
-                }
-                bottomNav.menu.add(Menu.NONE, switchId, Menu.NONE, text).setIcon(icon)
             }
         } else {
             switchOrder.remove(switchId)
@@ -161,5 +164,16 @@ class HomeFragment : Fragment() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putIntegerArrayList("bottom_nav_items", ArrayList(switchOrder))
+    }
+
+    fun navigateToFragment(destinationId: Int) {
+        val navOptions = NavOptions.Builder()
+            .setEnterAnim(R.anim.slide_in_right)
+            .setExitAnim(R.anim.lside_out_left)
+            .setPopEnterAnim(R.anim.slide_in_left)
+            .setPopExitAnim(R.anim.slide_out_right)
+            .build()
+
+        findNavController().navigate(destinationId, null, navOptions)
     }
 }
