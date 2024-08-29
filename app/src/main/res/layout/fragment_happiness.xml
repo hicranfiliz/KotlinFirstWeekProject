@@ -8,7 +8,7 @@ android:layout_height="match_parent"
 android:background="@drawable/gradient_bg_happiness"
 android:gravity="center"
 android:orientation="vertical"
-tools:context=".Switch3Fragment">
+tools:context=".KindnessFragment">
 
 <app.rive.runtime.kotlin.RiveAnimationView
     android:layout_width="match_parent"

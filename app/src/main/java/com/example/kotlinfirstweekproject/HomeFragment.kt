@@ -1,5 +1,6 @@
 package com.example.kotlinfirstweekproject
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,7 +9,9 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
@@ -22,9 +25,10 @@ import java.util.ArrayList
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentAllSwitchBinding
-    private lateinit var bottomNav : BottomNavigationView
+    //private lateinit var bottomNav : BottomNavigationView
     var isSwitchEnabled : Boolean = false
-    private val switchOrder = mutableListOf<Int>()  // acilan switchlerin sirasini tutmak icin liste olusturuldu.
+    private val switchOrder = mutableListOf<Int>()
+    private val bottomNav: BottomNavigationView? get() = (activity as? MainActivity)?.bottomNav
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +37,7 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_all_switch, container, false)
         binding.fragment = this
 
-        // mainactitvity'den bottomnavbar alindi.
-        bottomNav = requireActivity().findViewById(R.id.bottomNav)
+        //bottomNav = requireActivity().findViewById(R.id.bottomNav)
 
         // kaydedilen bottom nav state i
         if (savedInstanceState != null) {
@@ -49,12 +52,12 @@ class HomeFragment : Fragment() {
                         R.id.swt5 -> R.drawable.relationship to "Respect"
                         else -> R.drawable.home to "Home"
                     }
-                    bottomNav.menu.add(Menu.NONE, id, Menu.NONE, text).setIcon(icon)
+                    bottomNav!!.menu.add(Menu.NONE, id, Menu.NONE, text).setIcon(icon)
                     switchOrder.add(id)
                 }
             }
         } else {
-            bottomNav.visibility = View.GONE
+            bottomNav!!.visibility = View.GONE
         }
 
 //        bottomNav.setOnNavigationItemSelectedListener { item ->
@@ -64,16 +67,22 @@ class HomeFragment : Fragment() {
 
         Rive.init(requireContext())
         binding.swt6.isChecked = true
-        bottomNav.visibility = View.GONE
+        bottomNav!!.visibility = View.GONE
         disableAllSwitches()
         return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        bottomNav!!.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.bottom_home))
     }
 
 
     override fun onResume() {
         super.onResume()
         if (!binding.swt6.isChecked) {
-            bottomNav.visibility = View.VISIBLE
+            bottomNav!!.visibility = View.VISIBLE
             enableAllSwitches()
         } else{
             disableAllSwitches()
@@ -94,10 +103,10 @@ class HomeFragment : Fragment() {
         binding.invalidateAll()
 
         if (binding.swt6.isChecked){
-            bottomNav.visibility = View.GONE
+            bottomNav!!.visibility = View.GONE
             disableAllSwitches()
         }else{
-            bottomNav.visibility = View.VISIBLE
+            bottomNav!!.visibility = View.VISIBLE
             resetBottomNav()
         }
     }
@@ -123,8 +132,8 @@ class HomeFragment : Fragment() {
 
 
     private fun resetBottomNav() {
-        bottomNav.menu.clear()
-        bottomNav.menu.add(Menu.NONE, R.id.homeFragment, Menu.NONE, "Home").setIcon(R.drawable.home)
+        bottomNav!!.menu.clear()
+        bottomNav!!.menu.add(Menu.NONE, R.id.homeFragment, Menu.NONE, "Home").setIcon(R.drawable.home)
         switchOrder.clear()
     }
 
@@ -149,15 +158,21 @@ class HomeFragment : Fragment() {
                     R.id.swt5 -> R.drawable.relationship to "Respect"
                     else -> R.drawable.home to "Home"
                 }
-                bottomNav.menu.add(Menu.NONE, switchId, Menu.NONE, text).setIcon(icon)
+                bottomNav!!.menu.add(Menu.NONE, switchId, Menu.NONE, text).setIcon(icon)
             } else {
-                Snackbar.make(binding.root, "En fazla 4 item eklenebilir!!!!", Snackbar.LENGTH_LONG).show()
-                Toast.makeText(requireContext(), "En fazla 4 item eklenebilir!!", Toast.LENGTH_SHORT).show()
-                switchOrder.add(switchId)
+                //switchOrder.add(switchId)
+                switch.isChecked = false
+                val snackbar = Snackbar.make(binding.root, "Up to 4 items can be added!", Snackbar.LENGTH_LONG)
+                snackbar.view.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.bottom_giving))
+                val snackbarTextView = snackbar.view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+                snackbarTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.bottom_happiness))
+                snackbarTextView.textSize = 16f
+
+                snackbar.show()
             }
         } else {
             switchOrder.remove(switchId)
-            bottomNav.menu.removeItem(switchId)
+            bottomNav!!.menu.removeItem(switchId)
         }
     }
 

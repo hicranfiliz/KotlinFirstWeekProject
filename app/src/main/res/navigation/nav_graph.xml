@@ -12,27 +12,27 @@
         tools:layout="@layout/fragment_all_switch" />
     <fragment
         android:id="@+id/swt1Fragment"
-        android:name="com.example.kotlinfirstweekproject.Switch1Fragment"
+        android:name="com.example.kotlinfirstweekproject.HappinessFragment"
         android:label="fragment_switch1"
         tools:layout="@layout/fragment_happiness" />
     <fragment
         android:id="@+id/swt2Fragment"
-        android:name="com.example.kotlinfirstweekproject.Switch2Fragment"
+        android:name="com.example.kotlinfirstweekproject.OptimizmFragment"
         android:label="fragment_switch2"
         tools:layout="@layout/fragment_optimizm" />
     <fragment
         android:id="@+id/swt3Fragment"
-        android:name="com.example.kotlinfirstweekproject.Switch3Fragment"
+        android:name="com.example.kotlinfirstweekproject.KindnessFragment"
         android:label="fragment_switch3"
         tools:layout="@layout/fragment_kindness" />
     <fragment
         android:id="@+id/swt4Fragment"
-        android:name="com.example.kotlinfirstweekproject.Switch4Fragment"
+        android:name="com.example.kotlinfirstweekproject.GivingFragment"
         android:label="fragment_switch4"
         tools:layout="@layout/fragment_giving" />
     <fragment
         android:id="@+id/switch5Fragment"
-        android:name="com.example.kotlinfirstweekproject.Switch5Fragment"
+        android:name="com.example.kotlinfirstweekproject.RespectFragment"
         android:label="fragment_switch5"
-        tools:layout="@layout/fragment_switch5" />
+        tools:layout="@layout/fragment_respect" />
 </navigation>

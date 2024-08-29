@@ -14,5 +14,14 @@
     <color name="green">#4eb05a</color>
     <color name="watergreen">#84fab0</color>
     <color name="orange">#ffc107</color>
+    <color name="lila">#AC8FF3</color>
+
+    <color name="bottom_home">#DAA1CD</color>
+    <color name="bottom_happiness">#fa709a</color>
+    <color name="bottom_respect">#9575CD</color>
+    <color name="bottom_kindness">#FFCDD2</color>
+    <color name="bottom_optimizm">#8fd3f4</color>
+    <color name="bottom_giving">#FFCC80</color>
+
 
 </resources>
