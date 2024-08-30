@@ -7,6 +7,7 @@ the implementation of dynamic UI behaviour using data bindin and animations.
 # SCREENSHOTS
 
 https://github.com/user-attachments/assets/2e54ce4b-b6d0-4507-ae2c-c4cc70ef8f3b
+
 ![Ekran görüntüsü 2024-08-30 145958](https://github.com/user-attachments/assets/a9d906c3-3a22-4a6e-8601-cacaea278be0)
 ![Ekran görüntüsü 2024-08-30 150041](https://github.com/user-attachments/assets/3902c2fd-fcb0-4467-95af-2226ffa6e646)
 ![Ekran görüntüsü 2024-08-30 150108](https://github.com/user-attachments/assets/466d175f-cfcf-40d2-81c2-51824c7b8b25)
