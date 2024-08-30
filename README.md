@@ -8,7 +8,9 @@ SCREENSHOTS
 
 (https://github.com/hicranfiliz/KotlinFirstWeekProject/blob/e2289bf1ca3c164e75bfb79a8aaedd2da4a6949c/kotlinfirstweekvideo.mp4)
 
-https://github.com/hicranfiliz/KotlinFirstWeekProject/blob/1023ece4d7f1863e83a406dbec01b258bace53d9/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-08-30%20150302.png
+![Image Alt]([image_url](https://github.com/hicranfiliz/KotlinFirstWeekProject/blob/1023ece4d7f1863e83a406dbec01b258bace53d9/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-08-30%20150302.png))
+
+
 
 FEATURES
 
