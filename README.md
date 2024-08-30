@@ -6,7 +6,7 @@ the implementation of dynamic UI behaviour using data bindin and animations.
 
 SCREENSHOTS
 
-https://github.com/hicranfiliz/KotlinFirstWeekProject/blob/3814ea2d07969740da2b6f1b8138605a642df3ce/kotlin11sc.mp4
+(https://github.com/hicranfiliz/KotlinFirstWeekProject/blob/e2289bf1ca3c164e75bfb79a8aaedd2da4a6949c/kotlinfirstweekvideo.mp4)
 
 FEATURES
 
