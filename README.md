@@ -1,4 +1,5 @@
 ABOUT
+
 This project demonstrates the usage of various Android UI components, including Switches, BottomNavigationView,
 Jetpack Navigation and Rive animations. The project is designed with a specific set of requirements that challenge
 the implementation of dynamic UI behaviour using data bindin and animations.
@@ -7,6 +8,7 @@ SCREENSHOTS
 
 
 FEATURES
+
 - Ego Switch Behaviour:
   - Ego switch is enabled first, preventing other switches being toggled.
   - Disabling the Ego switch enables other switches.
